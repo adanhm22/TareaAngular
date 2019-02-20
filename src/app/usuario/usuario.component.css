@@ -1,11 +1,15 @@
 div{
   display: inline-block;
-  height: 45%;
+
+}
+#UsuarioComponent{
   width: 45%;
   margin: 1.5%;
 }
-
+.informacion{
+  display: flex;
+  justify-content: center;
+}
 img{
-  height: 100%;
   width: 100%;
 }
