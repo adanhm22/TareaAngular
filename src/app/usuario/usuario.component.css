@@ -1,0 +1,11 @@
+div{
+  display: inline-block;
+  height: 45%;
+  width: 45%;
+  margin: 1.5%;
+}
+
+img{
+  height: 100%;
+  width: 100%;
+}
