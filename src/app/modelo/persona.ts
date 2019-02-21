@@ -6,7 +6,7 @@ export class Persona {
   public nombre:string;
   public apellidos: string;
   public edad: number;
-  public foto:URL;
+  public foto:string;
   public sexo:string;
   public email: string;
   public votos:number;
@@ -25,7 +25,7 @@ archivos. Os pasaré yo varias urls.
  El email
  El nº de votos NO SE PIDE. Por defecto es 0.
   */
-  constructor(_codigo:number,_nombre:string,_apellidos:string,_url:URL,
+  constructor(_codigo:number,_nombre:string,_apellidos:string,_url:string,
     _edad:number,_sexo:string,_email:string,_votos:number=0){
       this.codigo=_codigo;
       this.nombre=_nombre;
