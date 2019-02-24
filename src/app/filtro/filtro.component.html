@@ -1,0 +1,29 @@
+<form >
+  <div>
+  <label for="localidad">localidad: </label>
+  <br>
+  <input type="text" name="localidad" [(ngModel)]="filtro.localidad" placeholder="localidad">
+  </div>
+  <br>
+  <div>
+  <label for="interes">interes: </label>
+  <br>
+  <input type="text" name="interes" [(ngModel)]="filtro.interes" placeholder="interes">
+  </div>
+<br>
+<div>
+  <label for="edadMinima">edad minima: </label>
+  <br>
+  <input type="number" name="edadMinima" [(ngModel)]="filtro.edadMinima" placeholder="edad minima">
+  </div>
+<br>
+<div>
+  <label for="edadMaxima">edad maxima: </label>
+  <br>
+  <input type="number" name="edadMaxima" [(ngModel)]="filtro.edadMaxima" placeholder="edad maxima">
+  </div>
+<br>
+<div>
+<button (click)="addFiltro() " >Añadir filtro</button>
+</div>
+</form>

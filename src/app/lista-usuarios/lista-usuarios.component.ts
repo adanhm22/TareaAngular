@@ -12,7 +12,7 @@ export class ListaUsuariosComponent implements OnInit {
   listaPersonas:Persona[];
 
   constructor(_servicio:ServicioPersonasService) {
-    this.listaPersonas=_servicio.personas;
+    this.listaPersonas=_servicio.getPersonasFiltro();
    }
 
   ngOnInit() {

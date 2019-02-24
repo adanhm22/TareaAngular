@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {CommonModule} from '@angular/common'
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,9 @@ import { MyToolbarComponent } from './my-toolbar/my-toolbar.component';
 import { MyMenuComponent } from './my-menu/my-menu.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import {MatCardModule} from '@angular/material/card';
+import { FiltroComponent } from './filtro/filtro.component';
+import { UsuarioInformacionComponent } from './usuario-informacion/usuario-informacion.component';
+
 
 
 
@@ -23,7 +28,9 @@ import {MatCardModule} from '@angular/material/card';
     UsuarioComponent,
     MyToolbarComponent,
     MyMenuComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    FiltroComponent,
+    UsuarioInformacionComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,9 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatListModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

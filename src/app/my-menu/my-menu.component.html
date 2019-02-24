@@ -1,13 +1,10 @@
 
-<button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon>more_vert</mat-icon>
-</button>
 <mat-menu #menu="matMenu">
   <button mat-menu-item>
     <mat-icon>home</mat-icon>
     <span>Home</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item [routerLink]="['/filtrar']">
     <mat-icon>filter_list</mat-icon>
     <span>Filtrar</span>
   </button>
@@ -16,3 +13,7 @@
     <span>Perfil</span>
   </button>
 </mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
