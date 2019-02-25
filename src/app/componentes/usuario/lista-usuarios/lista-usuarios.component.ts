@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Persona } from '../modelo/persona';
-import { ServicioPersonasService } from '../servicio-personas.service';
+import { Persona } from 'src/app/modelo/persona';
+import { ServicioPersonasService } from 'src/app/servicio-personas.service';
 
 @Component({
   selector: 'app-lista-usuarios',

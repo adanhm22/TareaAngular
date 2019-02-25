@@ -25,7 +25,7 @@ export class ServicioPersonasService {
       this.addPersona(new Persona(0,"persona "+0,"personificacion "+0,
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1920px-Red_and_blue_pill.jpg",0,"hombre",
     "prueba@prueba.prueba"));
-    this.personasTotales[0].direccion="sotrondio";
+    this.personasTotales[0].ciudad="sotrondio";
     let inat:Interes = new Interes("futbol","me gusta el futbol",8);
     this.personasTotales[0].intereses.push(inat);
 
@@ -38,7 +38,7 @@ export class ServicioPersonasService {
     this.addPersona(new Persona(2,"persona "+2,"personificacion "+2,
     "https://vignette.wikia.nocookie.net/d68395ad-0cc5-444d-bf19-3e0824b8e369/scale-to-width-down/800",2,"hombre",
   "prueba@prueba.prueba"));
-  this.personasTotales[2].direccion="sotrondio";
+  this.personasTotales[2].ciudad="sotrondio";
 
   this.addPersona(new Persona(3,"persona "+3,"personificacion "+3,
   "http://los40mx00.epimg.net/los40/imagenes/2018/11/06/cinetv/1541462533_120966_1541463824_gigante_normal.jpg",3,"hombre",
@@ -74,13 +74,13 @@ export class ServicioPersonasService {
 
    addFiltro(_filtro:Filtro){
      this.filtro=_filtro;
-     this._aplicarFiltro;
+     this._aplicarFiltro();
    }
 
    _aplicarFiltro(){
      this.personasFiltro=new Array();
 
-       
+
      for (let persona of this.personasTotales){
        if(this.filtro.isValid(persona)){
          this.personasFiltro.push(persona);

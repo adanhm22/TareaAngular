@@ -21,6 +21,5 @@
 
 
 <ng-container *ngFor="let interes of persona.intereses">
-    <app-interes [interes]="interes"></app-interes>
+    <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
 </ng-container>
-

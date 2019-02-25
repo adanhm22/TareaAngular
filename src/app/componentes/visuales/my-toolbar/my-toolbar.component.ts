@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ServicioPersonasService } from '../servicio-personas.service';
-import { Filtro } from '../modelo/filtro';
+import { ServicioPersonasService } from 'src/app/servicio-personas.service';
+import { Filtro } from 'src/app/modelo/filtro';
 
 @Component({
   selector: 'app-my-toolbar',

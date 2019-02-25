@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Filtro} from '../modelo/filtro';
-import { ServicioPersonasService } from '../servicio-personas.service';
+import {Filtro} from 'src/app/modelo/filtro';
+import { ServicioPersonasService } from 'src/app/servicio-personas.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-filtro',
@@ -10,9 +11,11 @@ import { ServicioPersonasService } from '../servicio-personas.service';
 export class FiltroComponent implements OnInit {
   filtro:Filtro;
   servicio:ServicioPersonasService;
-  constructor(_servicio:ServicioPersonasService) {
+  routes:Router;
+  constructor(_routes:Router,_servicio:ServicioPersonasService) {
     this.filtro=new Filtro("","",0,0);
     this.servicio=_servicio;
+    this.routes=_routes;
    }
 
   ngOnInit() {
@@ -20,6 +23,6 @@ export class FiltroComponent implements OnInit {
 
   addFiltro(){
     this.servicio.addFiltro(this.filtro);
-    console.log("hola");
+    this.routes.navigate(['/home']);
   }
 }

@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Interes } from '../modelo/interes';
+import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
+import { Interes } from 'src/app/modelo/interes';
 
 @Component({
   selector: 'app-interes',
@@ -8,9 +8,13 @@ import { Interes } from '../modelo/interes';
 })
 export class InteresComponent implements OnInit {
   @Input() interes:Interes;
+  @Output() borrar=new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
 
+  borrado(){
+    this.borrar.emit(this.interes.nombre);
+  }
 }

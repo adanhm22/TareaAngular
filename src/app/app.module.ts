@@ -5,18 +5,20 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioComponent } from './componentes/usuario/usuario/usuario.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
-import { MyToolbarComponent } from './my-toolbar/my-toolbar.component';
+import { MyToolbarComponent } from './componentes/visuales/my-toolbar/my-toolbar.component';
  import { MatMenuModule} from '@angular/material/menu';
-import { MyMenuComponent } from './my-menu/my-menu.component';
-import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { MyMenuComponent } from './componentes/visuales/my-menu/my-menu.component';
+import { ListaUsuariosComponent } from './componentes/usuario/lista-usuarios/lista-usuarios.component';
 import {MatCardModule} from '@angular/material/card';
-import { FiltroComponent } from './filtro/filtro.component';
-import { UsuarioInformacionComponent } from './usuario-informacion/usuario-informacion.component';
-import { InteresComponent } from './interes/interes.component';
+import { FiltroComponent } from './componentes/formularios/filtro/filtro.component';
+
+import { UsuarioInformacionComponent } from './componentes/usuario/usuario-informacion/usuario-informacion.component';
+import { InteresComponent } from './componentes/usuario/interes/interes.component';
+import { AddInteresComponent } from './componentes/formularios/add-interes/add-interes.component';
 
 
 
@@ -32,7 +34,8 @@ import { InteresComponent } from './interes/interes.component';
     ListaUsuariosComponent,
     FiltroComponent,
     UsuarioInformacionComponent,
-    InteresComponent
+    InteresComponent,
+    AddInteresComponent
   ],
   imports: [
     BrowserModule,

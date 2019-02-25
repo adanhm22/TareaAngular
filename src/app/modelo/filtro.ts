@@ -15,11 +15,15 @@ export class Filtro {
 
   //return true si es valida, false si no lo es
   isValid(persona:Persona){
-    if(persona.ciudad==this.localidad||this.localidad==null||this.localidad==""){
+    if(persona.ciudad==this.localidad||this.localidad==""){
       if(persona.edad>=this.edadMinima||this.edadMinima==0){
         if(persona.edad<=this.edadMaxima||this.edadMaxima==0){
-          if(this.interes!=null||""!=this.interes){
+
+          if(this.interes!=""){
+
+
           for (let interes of persona.intereses){
+            console.log(interes.nombre);
             if(interes.nombre==this.interes){
               return true;
             }

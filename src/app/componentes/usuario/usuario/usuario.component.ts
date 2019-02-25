@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Persona } from '../modelo/persona';
+import { Persona } from 'src/app/modelo/persona';
 
 @Component({
   selector: 'app-usuario',

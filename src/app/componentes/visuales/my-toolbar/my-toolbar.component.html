@@ -7,7 +7,7 @@
   </span>
   <ng-template #toolbarDefecto>
     <mat-toolbar-row>
-      <span *ngIf="servicio.getFiltro()!=undefined || servicio.getFiltro()!=null; else elseBlock">
+      <span *ngIf="servicio.getFiltro().localidad!=''; else elseBlock">
         {{servicio.getFiltro().localidad}}</span>
       <ng-template #elseBlock>
         <span>Tarea Angular</span>
@@ -22,5 +22,5 @@
 
   </mat-toolbar-row>
 </ng-template>
-  
+
 </mat-toolbar>
