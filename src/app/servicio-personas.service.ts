@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Persona} from './modelo/persona';
 import {Filtro} from './modelo/filtro'
+import { Interes } from './modelo/interes';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,12 @@ export class ServicioPersonasService {
   private personasTotales:Persona[]=new Array;
   private personasFiltro:Persona[]= new Array;
   private filtro:Filtro;
+  private entrando:boolean;
 
   usuario:Persona;
   constructor() {
+
+    this.filtro= new Filtro("","",0,0);
     //usuario
     this.usuario=new Persona(0,"p1","persona 1"
     ,"https://assets.trome.pe/files/ec_article_multimedia_gallery/uploads/2018/04/17/5ad609d27c1a7.jpeg",20,"hombre","algo@algo.com",0);
@@ -22,6 +26,8 @@ export class ServicioPersonasService {
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1920px-Red_and_blue_pill.jpg",0,"hombre",
     "prueba@prueba.prueba"));
     this.personasTotales[0].direccion="sotrondio";
+    let inat:Interes = new Interes("futbol","me gusta el futbol",8);
+    this.personasTotales[0].intereses.push(inat);
 
 
 
@@ -51,6 +57,9 @@ export class ServicioPersonasService {
    }
 
    getPersona(indice:number){
+     if(indice==-2){
+       return this.usuario;
+     }else
      return this.personasTotales[indice];
    }
 
@@ -63,20 +72,20 @@ export class ServicioPersonasService {
      }
    }
 
-   addFiltro(filtro:Filtro){
-     this.filtro=filtro;
+   addFiltro(_filtro:Filtro){
+     this.filtro=_filtro;
      this._aplicarFiltro;
    }
 
    _aplicarFiltro(){
-     this.personasFiltro=[];
-     if(this.filtro!=null){
+     this.personasFiltro=new Array();
+
+       
      for (let persona of this.personasTotales){
        if(this.filtro.isValid(persona)){
          this.personasFiltro.push(persona);
        }
      }
-   }else this.personasFiltro=this.personasTotales;
    }
 
    getPersonasFiltro(){
@@ -93,6 +102,14 @@ export class ServicioPersonasService {
 
    getNumeroPersonasFiltro(){
      return this.personasFiltro.length;
+   }
+
+   setEntrando(_entrando:boolean){
+    this.entrando=_entrando;
+   }
+
+   isEntrando(){
+     return this.entrando;
    }
 
 }

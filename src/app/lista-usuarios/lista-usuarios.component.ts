@@ -9,10 +9,10 @@ import { ServicioPersonasService } from '../servicio-personas.service';
 })
 export class ListaUsuariosComponent implements OnInit {
 
-  listaPersonas:Persona[];
+  servicio:ServicioPersonasService;
 
   constructor(_servicio:ServicioPersonasService) {
-    this.listaPersonas=_servicio.getPersonasFiltro();
+   this.servicio=_servicio;
    }
 
   ngOnInit() {

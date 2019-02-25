@@ -16,6 +16,7 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import {MatCardModule} from '@angular/material/card';
 import { FiltroComponent } from './filtro/filtro.component';
 import { UsuarioInformacionComponent } from './usuario-informacion/usuario-informacion.component';
+import { InteresComponent } from './interes/interes.component';
 
 
 
@@ -30,7 +31,8 @@ import { UsuarioInformacionComponent } from './usuario-informacion/usuario-infor
     MyMenuComponent,
     ListaUsuariosComponent,
     FiltroComponent,
-    UsuarioInformacionComponent
+    UsuarioInformacionComponent,
+    InteresComponent
   ],
   imports: [
     BrowserModule,

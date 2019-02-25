@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ServicioPersonasService } from '../servicio-personas.service';
 import { Filtro } from '../modelo/filtro';
 
@@ -8,11 +8,9 @@ import { Filtro } from '../modelo/filtro';
   styleUrls: ['./my-toolbar.component.css']
 })
 export class MyToolbarComponent implements OnInit {
-  filtro:Filtro;
-  numeroPersonas:number;
+  servicio:ServicioPersonasService;
   constructor(_servicio:ServicioPersonasService) {
-    this.filtro=_servicio.getFiltro();
-    this.numeroPersonas=_servicio.getNumeroPersonasFiltro();
+    this.servicio=_servicio;
    }
 
   ngOnInit() {

@@ -1,16 +1,26 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-      <span *ngIf="filtro!=undefined || filtro!=null; else elseBlock">{{filtro.localidad}}</span>
+  <span *ngIf="entrado==true;else toolbarDefecto">
+      <mat-toolbar-row>
+          <mat-icon class="example-icon">keyboard_return</mat-icon>
+      </mat-toolbar-row>
+
+  </span>
+  <ng-template #toolbarDefecto>
+    <mat-toolbar-row>
+      <span *ngIf="servicio.getFiltro()!=undefined || servicio.getFiltro()!=null; else elseBlock">
+        {{servicio.getFiltro().localidad}}</span>
       <ng-template #elseBlock>
         <span>Tarea Angular</span>
       </ng-template>
 
     <span class="example-spacer"></span>
-    {{numeroPersonas}}
+    {{servicio.getNumeroPersonasFiltro()}}
     <mat-icon class="example-icon">group</mat-icon>
   <span class="example-spacer"></span>
   <mat-icon class="example-icon">group_add</mat-icon>
   <app-my-menu></app-my-menu>
 
   </mat-toolbar-row>
+</ng-template>
+  
 </mat-toolbar>

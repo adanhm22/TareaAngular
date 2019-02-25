@@ -1,4 +1,4 @@
-<app-my-toolbar></app-my-toolbar>
-<ng-container *ngFor="let persona of listaPersonas">
+
+<ng-container *ngFor="let persona of servicio.getPersonasFiltro()">
     <app-usuario [persona]="persona"></app-usuario>
 </ng-container>

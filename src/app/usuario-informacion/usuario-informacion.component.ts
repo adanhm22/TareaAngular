@@ -11,10 +11,12 @@ import { ServicioPersonasService } from '../servicio-personas.service';
 export class UsuarioInformacionComponent implements OnInit {
   persona:Persona;
   constructor(route: ActivatedRoute,servicio:ServicioPersonasService) {
-    this.persona=servicio.getPersonaPorNombre(route.snapshot.params['id']);
+    this.persona=servicio.getPersona(route.snapshot.params['id']);
+    
    }
 
   ngOnInit() {
+    
   }
 
 }
