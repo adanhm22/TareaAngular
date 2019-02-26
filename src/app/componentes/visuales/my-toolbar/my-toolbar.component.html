@@ -1,26 +1,29 @@
 <mat-toolbar color="primary">
-  <span *ngIf="entrado==true;else toolbarDefecto">
-      <mat-toolbar-row>
-          <mat-icon class="example-icon">keyboard_return</mat-icon>
-      </mat-toolbar-row>
 
-  </span>
-  <ng-template #toolbarDefecto>
-    <mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span *ngIf="servicio.isEntrando()==true;else toolbarDefecto">
+      <button mat-icon-button >
+          <mat-icon class="example-icon" (click)="back()">keyboard_backspace</mat-icon>
+      </button>
+    </span>
+    <ng-template #toolbarDefecto>
       <span *ngIf="servicio.getFiltro().localidad!=''; else elseBlock">
         {{servicio.getFiltro().localidad}}</span>
       <ng-template #elseBlock>
         <span>Tarea Angular</span>
       </ng-template>
 
-    <span class="example-spacer"></span>
-    {{servicio.getNumeroPersonasFiltro()}}
-    <mat-icon class="example-icon">group</mat-icon>
-  <span class="example-spacer"></span>
-  <mat-icon class="example-icon">group_add</mat-icon>
-  <app-my-menu></app-my-menu>
-
+      <span class="example-spacer"></span>
+      {{servicio.getNumeroPersonasFiltro()}}
+      <mat-icon class="example-icon">group</mat-icon>
+      <span class="example-spacer"></span>
+    <button mat-icon-button (click)="emparejar()">
+      <mat-icon class="example-icon">group_add</mat-icon>
+    </button>
+    
+    <app-my-menu></app-my-menu>
+  </ng-template>
   </mat-toolbar-row>
-</ng-template>
 
 </mat-toolbar>

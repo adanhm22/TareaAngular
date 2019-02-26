@@ -14,12 +14,29 @@
   Email:<span class="example-spacer"></span>{{persona.email}}<br>
   Hijos:<span class="example-spacer"></span>No<br>
 </h4>
+<h4>{{persona.votos}}<button mat-icon-button (click)="darMeGusta()">
+    <span *ngIf="persona.votos==0;else votado">
+       <mat-icon>favorite_border</mat-icon>
+      </span>
+      <ng-template #votado>
+          <mat-icon>favorite</mat-icon>
+        </ng-template>
+</button></h4>
 </div>
 <h4>
-<div>mis intereses: (+)</div>
+<div>mis intereses: 
+  <button mat-icon-button [routerLink]="['/info-usuario',id,'add-interes']">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
 </h4>
 
 
 <ng-container *ngFor="let interes of persona.intereses">
     <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
 </ng-container>
+
+enviar mail
+<button mat-icon-button [routerLink]="['/info-usuario',id,'enviar-mail']">
+<mat-icon>mail</mat-icon>
+</button>

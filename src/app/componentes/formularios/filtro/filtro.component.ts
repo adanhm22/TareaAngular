@@ -16,6 +16,7 @@ export class FiltroComponent implements OnInit {
     this.filtro=new Filtro("","",0,0);
     this.servicio=_servicio;
     this.routes=_routes;
+    this.servicio.setEntrando(true);
    }
 
   ngOnInit() {

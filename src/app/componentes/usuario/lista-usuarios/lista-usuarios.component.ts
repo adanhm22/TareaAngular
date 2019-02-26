@@ -13,6 +13,7 @@ export class ListaUsuariosComponent implements OnInit {
 
   constructor(_servicio:ServicioPersonasService) {
    this.servicio=_servicio;
+   this.servicio.setEntrando(false);
    }
 
   ngOnInit() {

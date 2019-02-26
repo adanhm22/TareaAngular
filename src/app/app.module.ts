@@ -19,6 +19,7 @@ import { FiltroComponent } from './componentes/formularios/filtro/filtro.compone
 import { UsuarioInformacionComponent } from './componentes/usuario/usuario-informacion/usuario-informacion.component';
 import { InteresComponent } from './componentes/usuario/interes/interes.component';
 import { AddInteresComponent } from './componentes/formularios/add-interes/add-interes.component';
+import { EnviarMailComponent } from './componentes/formularios/enviar-mail/enviar-mail.component';
 
 
 
@@ -35,7 +36,8 @@ import { AddInteresComponent } from './componentes/formularios/add-interes/add-i
     FiltroComponent,
     UsuarioInformacionComponent,
     InteresComponent,
-    AddInteresComponent
+    AddInteresComponent,
+    EnviarMailComponent
   ],
   imports: [
     BrowserModule,

@@ -35,6 +35,6 @@ archivos. Os pasaré yo varias urls.
       this.sexo=_sexo;
       this.email=_email;
       this.votos=_votos;
-      this.intereses=new Array();
+      this.intereses=[];
   }
 }

@@ -1,3 +1,15 @@
-<p>
-  add-interes works!
-</p>
+<form>
+  <label for="nombre">Nombre: </label>
+  <br>
+  <input type="text" name="nombre" [(ngModel)]="interes.nombre" placeholder="nombre">
+  <br>
+  <label for="descripcion">Descripcion: </label>
+  <br>
+  <input type="text" name="descripcion" [(ngModel)]="interes.descripcion" placeholder="descripcion">
+  <br>
+  <label for="importancia">Importancia: </label>
+  <br>
+  <input type="number" name="importancia" [(ngModel)]="interes.importancia" placeholder="importancia">
+  <br>
+  <button (click)="addInteres() ">Añadir Interes</button>
+</form>
