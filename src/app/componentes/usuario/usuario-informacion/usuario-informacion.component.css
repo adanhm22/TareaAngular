@@ -1,7 +1,6 @@
-.example-spacer {
-  flex: 1 1 auto;
+.center{
+  text-align: center;
 }
-
 
 img{
   max-height: 40rem;

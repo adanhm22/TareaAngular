@@ -1,42 +1,38 @@
 
 
-<div class="col-lg-12">
-  <img src="{{persona.foto}}" style="width: 100%">
-</div>
-<div>
-  <h3>
-  Información básica:
-</h3>
-</div>
-<div>
-  <h4>
-  Telefono: <span class="example-spacer"></span>{{persona.telefono}}<br>
-  Email:<span class="example-spacer"></span>{{persona.email}}<br>
-  Hijos:<span class="example-spacer"></span>No<br>
-</h4>
-<h4>{{persona.votos}}<button mat-icon-button (click)="darMeGusta()">
-    <span *ngIf="persona.votos==0;else votado">
-       <mat-icon>favorite_border</mat-icon>
-      </span>
-      <ng-template #votado>
-          <mat-icon>favorite</mat-icon>
-        </ng-template>
-</button></h4>
-</div>
-<h4>
-<div>mis intereses: 
-  <button mat-icon-button [routerLink]="['/info-usuario',id,'add-interes']">
-    <mat-icon>add</mat-icon>
-  </button>
-</div>
-</h4>
+<mat-card>
+    <mat-card-title>{{persona.nombre}}</mat-card-title>
+    <mat-card-subtitle>{{persona.edad}} años</mat-card-subtitle>
+<img mat-card-image src="{{persona.foto}}" alt="{{persona.nombre}}">
+  <mat-card-content>
+            <h3 class="center"> información básica:</h3>
+            <div>
+          Telefono          <span class="center">:{{persona.telefono}}</span><br>
+          Email             <span class="center">:{{persona.email}}</span><br>
+          Hijos             <span class="center">:No</span><br>
+          </div>
+    Intereses: <button mat-icon-button [routerLink]="['/info-usuario',id,'add-interes']">
+      <mat-icon>add</mat-icon>
+    </button>
+    <br>
+    <ng-container *ngFor="let interes of persona.intereses">
+        <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
+    </ng-container>
+  </mat-card-content>
+  <mat-card-actions class="center">
+    <button mat-button (click)="darMeGusta()">
 
+{{persona.votos}}
+      <ng-container *ngIf="persona.votos>0; else sinLikes">
+        <mat-icon style="color: red">favorite</mat-icon>
+      </ng-container>
+      <ng-template #sinLikes>
+          <mat-icon>favorite_border</mat-icon>
+      </ng-template>
 
-<ng-container *ngFor="let interes of persona.intereses">
-    <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
-</ng-container>
-
-enviar mail
-<button mat-icon-button [routerLink]="['/info-usuario',id,'enviar-mail']">
-<mat-icon>mail</mat-icon>
-</button>
+    </button>
+    <button mat-button [routerLink]="['/info-usuario',id,'enviar-mail']">
+      <mat-icon>email</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>
