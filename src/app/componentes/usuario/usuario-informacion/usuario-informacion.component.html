@@ -1,7 +1,7 @@
 
 
-<mat-card>
-    <mat-card-title>{{persona.nombre}}</mat-card-title>
+<mat-card class="usuarioCard">
+    <mat-card-title>{{persona.nombre}} {{persona.apellidos}}</mat-card-title>
     <mat-card-subtitle>{{persona.edad}} años</mat-card-subtitle>
 <img mat-card-image src="{{persona.foto}}" alt="{{persona.nombre}}">
   <mat-card-content>
@@ -15,9 +15,14 @@
       <mat-icon>add</mat-icon>
     </button>
     <br>
-    <ng-container *ngFor="let interes of persona.intereses">
-        <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
+    <ng-container *ngIf="persona.intereses.length>0; else sinIntereses">
+      <ng-container *ngFor="let interes of persona.intereses">
+          <app-interes [interes]="interes" (borrar)="borrado($event)"></app-interes>
+      </ng-container>
     </ng-container>
+    <ng-template #sinIntereses>
+      <h3>No hay intereses</h3>
+    </ng-template>
   </mat-card-content>
   <mat-card-actions class="center">
     <button mat-button (click)="darMeGusta()">

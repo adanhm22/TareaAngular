@@ -16,34 +16,47 @@ export class ServicioPersonasService {
   constructor() {
 
     this.filtro = new Filtro("", "", 0, 0);
-    //usuario
-    this.usuario = new Persona(-2, "p1", "persona 1"
-      , "https://assets.trome.pe/files/ec_article_multimedia_gallery/uploads/2018/04/17/5ad609d27c1a7.jpeg", 20, "hombre", "algo@algo.com", 0);
+    //usuario necesita tener id -2 para que luego se encuentre de manera mas facil
+    this.usuario = new Persona(-2, "Usuario aplicacion", "apellido"
+      , "https://assets.trome.pe/files/ec_article_multimedia_gallery/uploads/2018/04/17/5ad609d27c1a7.jpeg", 20, "mujer", "algo@algo.com");
 
     //resto de personas
 
-    this.addPersona(new Persona(0, "persona " + 0, "personificacion " + 0,
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1920px-Red_and_blue_pill.jpg", 0, "hombre",
+    this.addPersona(new Persona(0, "pildoras ", "azulroja ",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1920px-Red_and_blue_pill.jpg", 20, "hombre",
       "prueba@prueba.prueba"));
     this.personasTotales[0].ciudad = "sotrondio";
-    let inat: Interes = new Interes("futbol", "me gusta el futbol", 8);
-    this.personasTotales[0].intereses.push(inat);
+    let interes: Interes = new Interes("futbol", "me gusta el futbol", 8);
+    this.personasTotales[0].intereses.push(interes);
 
 
 
-    this.addPersona(new Persona(1, "persona " + 1, "personificacion " + 1,
-      "https://images-na.ssl-images-amazon.com/images/I/81Mh4fn2e4L.jpg", 1, "mujer",
-      "prueba@prueba.prueba"));
+    this.addPersona(new Persona(1, "2b ", "yorha",
+      "https://images-na.ssl-images-amazon.com/images/I/81Mh4fn2e4L.jpg", 22, "mujer",
+      "prueba@prueba.prueba","inexistente"));
 
-    this.addPersona(new Persona(2, "persona " + 2, "personificacion " + 2,
-      "https://vignette.wikia.nocookie.net/d68395ad-0cc5-444d-bf19-3e0824b8e369/scale-to-width-down/800", 2, "hombre",
-      "prueba@prueba.prueba"));
+    this.addPersona(new Persona(2, "amamiya", "kurusu ",
+      "https://vignette.wikia.nocookie.net/d68395ad-0cc5-444d-bf19-3e0824b8e369/scale-to-width-down/800", 17, "hombre",
+      "prueba@prueba.prueba","sotrondio"));
     this.personasTotales[2].ciudad = "sotrondio";
 
-    this.addPersona(new Persona(3, "persona " + 3, "personificacion " + 3,
-      "http://los40mx00.epimg.net/los40/imagenes/2018/11/06/cinetv/1541462533_120966_1541463824_gigante_normal.jpg", 3, "hombre",
-      "prueba@prueba.prueba"));
+    this.addPersona(new Persona(3, "Don ramón", "Valdés " ,
+      "http://los40mx00.epimg.net/los40/imagenes/2018/11/06/cinetv/1541462533_120966_1541463824_gigante_normal.jpg", 64, "hombre",
+      "prueba@prueba.prueba","el entrego"));
+      this.addPersona(new Persona(4,"Alejandro","sanz",
+    "https://www.lecturas.com/medio/2017/07/14/alejandro-sanz_e7d02e6b_800x490.jpg",5,"hombre","alejandro@gmail.com"));
 
+    this.addPersona(new Persona(5,"Rosalia","Vila",
+  "https://www.abc.es/media/cultura/2018/07/24/rosalia-kENB--1248x698@abc.jpg",25,"mujer","rosalia@gmail.com","sotrondio"));
+
+  this.addPersona(new Persona(6,"willyrex","willy",
+  "https://esports.as.com/2018/11/14/willyrex/Willyrex-competira-Ninja-creador-contenido_1190890907_117251_1440x600.jpg",25,"hombre","willy@gmail.com"));
+
+  this.addPersona(new Persona(7,"nikola","tesla",
+"https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Tesla_Sarony.jpg/200px-Tesla_Sarony.jpg",34,"hombre","nikola@noexistianaunlosmail.com"));
+
+this.addPersona(new Persona(8,"pablo","alboran",
+"http://www.notodo.com/web/wp-content/uploads/alboran-1.jpg",29,"hombre","pablo@gmail.com","sevilla"));
     this._aplicarFiltro();
   }
 
@@ -113,7 +126,7 @@ export class ServicioPersonasService {
   }
 
   emparejar() {
-    
+
     let puntuacion: number = 0;
     let personaEmparejar:Persona=this.usuario;
     for (let personaFiltro of this.personasFiltro) {
@@ -139,5 +152,5 @@ export class ServicioPersonasService {
     }
     return personaEmparejar;
   }
-  
+
 }

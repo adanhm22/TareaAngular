@@ -17,6 +17,7 @@ export class FiltroComponent implements OnInit {
     this.servicio=_servicio;
     this.routes=_routes;
     this.servicio.setEntrando(true);
+    this.filtro=_servicio.getFiltro();
    }
 
   ngOnInit() {
@@ -25,5 +26,10 @@ export class FiltroComponent implements OnInit {
   addFiltro(){
     this.servicio.addFiltro(this.filtro);
     this.routes.navigate(['/home']);
+  }
+
+  quitarFiltro(){
+    this.filtro = new Filtro("","",0,0);
+    this.addFiltro();
   }
 }

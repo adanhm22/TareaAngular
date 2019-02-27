@@ -1,19 +1,19 @@
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item [routerLink]="['/home']">
-    <mat-icon>home</mat-icon>
+  <button mat-menu-item [routerLink]="['/home']" style="color: green">
+    <mat-icon style="color: green">home</mat-icon>
     <span>Home</span>
   </button>
-  <button mat-menu-item [routerLink]="['/filtrar']">
-    <mat-icon>filter_list</mat-icon>
+  <button mat-menu-item [routerLink]="['/filtrar']" style="color: yellow">
+    <mat-icon style="color: yellow">filter_list</mat-icon>
     <span>Filtrar</span>
   </button>
-  <button mat-menu-item [routerLink]="['/info-usuario',-2]">
-    <mat-icon>person_pin</mat-icon>
+  <button mat-menu-item [routerLink]="['/info-usuario',-2]" style="color: red ">
+    <mat-icon style="color: red ">person_pin</mat-icon>
     <span>Perfil</span>
   </button>
 </mat-menu>
 
 <button mat-icon-button [matMenuTriggerFor]="menu">
-  <mat-icon>more_vert</mat-icon>
+  <mat-icon>menu</mat-icon>
 </button>

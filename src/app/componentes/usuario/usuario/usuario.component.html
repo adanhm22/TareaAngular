@@ -1,18 +1,18 @@
-<div class="col-lg-4 col-md-6 col-sm-12" [routerLink]="['/info-usuario',persona.codigo]">
-  <img src="{{persona.foto}}" alt="{{persona.nombre}} ">
-  <div class="informacion">Nombre: {{persona.nombre}} {{persona.votos}} <!--sustituir por una imagen-->♥</div>
-  <div class="informacion">Edad: {{persona.edad}}</div>
-</div>
-
-<!--
-<mat-card class="col-lg-4 col-md-6 col-sm-12" [routerLink]="['/info-usuario',persona.codigo]">
-  <mat-card-header>
-    <mat-card-title>{{persona.nombre}}</mat-card-title>
-    <mat-card-subtitle>{{persona.edad}} años</mat-card-subtitle>
-  </mat-card-header>
+<mat-card class="col-lg-3 col-md-5 col-sm-11 contentFixer"
+ [ngClass]="{'muchosIntereses':persona.intereses.length>3,
+  'pocosIntereses': persona.intereses.length<=3}"
+  [routerLink]="['/info-usuario',persona.codigo]">
   <img mat-card-image src="{{persona.foto}}" alt="{{persona.nombre}}">
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>--->
+  <mat-card-title>{{persona.nombre}} {{persona.votos}}
+    <!--imagen de likes-->
+    <ng-container *ngIf="persona.votos>0; else sinLikes">
+      <mat-icon style="color: red">favorite</mat-icon>
+    </ng-container>
+    <ng-template #sinLikes>
+        <mat-icon>favorite_border</mat-icon>
+    </ng-template>
+
+
+  </mat-card-title>
+  <mat-card-subtitle>{{persona.edad}} años</mat-card-subtitle>
+</mat-card>
